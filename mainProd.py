@@ -10,7 +10,10 @@ def retrievingInformation(searchtext):
         #informationFile.write(data['response']['docs'][x]['title'])
         print(data['response']['docs'][x]['title'])
 
-
+def retrieve_company_names(name):
+    r = requests.get("https://autocomplete.clearbit.com/v1/companies/suggest?query=:"+name)
+    data = r.json()
+    return (data)
 
 
 
