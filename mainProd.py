@@ -5,10 +5,11 @@ import requests
 def retrievingInformation(searchtext):
     dataQuery = requests.get(url= "https://developer.uspto.gov/ibd-api/v1/patent/application",params={'searchText':searchtext,'start':'0','rows':100})
     data = dataQuery.json()
-    #informationFile = open('information.txt', 'a')
-    for x in range(0,len(data['response']['docs'])):
-        #informationFile.write(data['response']['docs'][x]['title'])
-        print(data['response']['docs'][x]['title'])
+    return (data)
+#    #informationFile = open('information.txt', 'a')
+#    for x in range(0,len(data['response']['docs'])):
+#        #informationFile.write(data['response']['docs'][x]['title'])
+#        print(data['response']['docs'][x]['title'])
 
 def retrieve_company_names(name):
     r = requests.get("https://autocomplete.clearbit.com/v1/companies/suggest?query=:"+name)
