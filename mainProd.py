@@ -17,4 +17,9 @@ def retrieve_company_names(name):
     return (data)
 
 
+API_Key = "f0c18f8a4aadc1c754026ec7d80bce2e"
+API_Secret = "3b18b9548dfcfb112d08d3be53bd6142"
+
+def display_company_info(name):
+    r = requests.get("https://www.amee.com/api/companies?company_name="+name,auth=(API_Key,API_Secret))
 
